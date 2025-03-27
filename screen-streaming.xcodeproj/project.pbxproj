@@ -1,0 +1,903 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B90086372D8FE80100C05FCD /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90085B42D8FB84600C05FCD /* ReplayKit.framework */; };
+		B900863E2D8FE80100C05FCD /* Broadcast.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B90086362D8FE80100C05FCD /* Broadcast.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B90086492D8FEA2A00C05FCD /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90085B42D8FB84600C05FCD /* ReplayKit.framework */; };
+		B900864A2D8FEA2A00C05FCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90085C02D8FB84600C05FCD /* UIKit.framework */; };
+		B90086512D8FEA2A00C05FCD /* BroadcastUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B90086482D8FEA2A00C05FCD /* BroadcastUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B90085752D8F7A7000C05FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B900855C2D8F7A6E00C05FCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B90085632D8F7A6E00C05FCD;
+			remoteInfo = StreamingExample;
+		};
+		B900857F2D8F7A7000C05FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B900855C2D8F7A6E00C05FCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B90085632D8F7A6E00C05FCD;
+			remoteInfo = StreamingExample;
+		};
+		B900863C2D8FE80100C05FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B900855C2D8F7A6E00C05FCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B90086352D8FE80100C05FCD;
+			remoteInfo = Broadcast;
+		};
+		B900864F2D8FEA2A00C05FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B900855C2D8F7A6E00C05FCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B90086472D8FEA2A00C05FCD;
+			remoteInfo = BroadcastUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B90085D42D8FB84600C05FCD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B90086512D8FEA2A00C05FCD /* BroadcastUI.appex in Embed Foundation Extensions */,
+				B900863E2D8FE80100C05FCD /* Broadcast.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B90085642D8F7A6E00C05FCD /* screen-streaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "screen-streaming.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90085742D8F7A7000C05FCD /* screen-streamingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "screen-streamingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B900857E2D8F7A7000C05FCD /* screen-streamingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "screen-streamingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90085B42D8FB84600C05FCD /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		B90085C02D8FB84600C05FCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B90086362D8FE80100C05FCD /* Broadcast.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Broadcast.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90086482D8FEA2A00C05FCD /* BroadcastUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B900863F2D8FE80100C05FCD /* Exceptions for "Broadcast" folder in "Broadcast" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B90086352D8FE80100C05FCD /* Broadcast */;
+		};
+		B90086522D8FEA2A00C05FCD /* Exceptions for "BroadcastUI" folder in "BroadcastUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B90086472D8FEA2A00C05FCD /* BroadcastUI */;
+		};
+		B90086582D8FECC400C05FCD /* Exceptions for "StreamingExample" folder in "screen-streaming" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B90085632D8F7A6E00C05FCD /* screen-streaming */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B90085662D8F7A6E00C05FCD /* StreamingExample */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B90086582D8FECC400C05FCD /* Exceptions for "StreamingExample" folder in "screen-streaming" target */,
+			);
+			path = StreamingExample;
+			sourceTree = "<group>";
+		};
+		B90085772D8F7A7000C05FCD /* StreamingExampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = StreamingExampleTests;
+			sourceTree = "<group>";
+		};
+		B90085812D8F7A7000C05FCD /* StreamingExampleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = StreamingExampleUITests;
+			sourceTree = "<group>";
+		};
+		B90086382D8FE80100C05FCD /* Broadcast */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B900863F2D8FE80100C05FCD /* Exceptions for "Broadcast" folder in "Broadcast" target */,
+			);
+			path = Broadcast;
+			sourceTree = "<group>";
+		};
+		B900864B2D8FEA2A00C05FCD /* BroadcastUI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B90086522D8FEA2A00C05FCD /* Exceptions for "BroadcastUI" folder in "BroadcastUI" target */,
+			);
+			path = BroadcastUI;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B90085612D8F7A6E00C05FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90085712D8F7A7000C05FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B900857B2D8F7A7000C05FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90086332D8FE80100C05FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B90086372D8FE80100C05FCD /* ReplayKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90086452D8FEA2A00C05FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B90086492D8FEA2A00C05FCD /* ReplayKit.framework in Frameworks */,
+				B900864A2D8FEA2A00C05FCD /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B900855B2D8F7A6E00C05FCD = {
+			isa = PBXGroup;
+			children = (
+				B90085662D8F7A6E00C05FCD /* StreamingExample */,
+				B90085772D8F7A7000C05FCD /* StreamingExampleTests */,
+				B90085812D8F7A7000C05FCD /* StreamingExampleUITests */,
+				B90086382D8FE80100C05FCD /* Broadcast */,
+				B900864B2D8FEA2A00C05FCD /* BroadcastUI */,
+				B90085B32D8FB84600C05FCD /* Frameworks */,
+				B90085652D8F7A6E00C05FCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B90085652D8F7A6E00C05FCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B90085642D8F7A6E00C05FCD /* screen-streaming.app */,
+				B90085742D8F7A7000C05FCD /* screen-streamingTests.xctest */,
+				B900857E2D8F7A7000C05FCD /* screen-streamingUITests.xctest */,
+				B90086362D8FE80100C05FCD /* Broadcast.appex */,
+				B90086482D8FEA2A00C05FCD /* BroadcastUI.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B90085B32D8FB84600C05FCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B90085B42D8FB84600C05FCD /* ReplayKit.framework */,
+				B90085C02D8FB84600C05FCD /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B90085632D8F7A6E00C05FCD /* screen-streaming */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B90085882D8F7A7000C05FCD /* Build configuration list for PBXNativeTarget "screen-streaming" */;
+			buildPhases = (
+				B90085602D8F7A6E00C05FCD /* Sources */,
+				B90085612D8F7A6E00C05FCD /* Frameworks */,
+				B90085622D8F7A6E00C05FCD /* Resources */,
+				B90085D42D8FB84600C05FCD /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B900863D2D8FE80100C05FCD /* PBXTargetDependency */,
+				B90086502D8FEA2A00C05FCD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B90085662D8F7A6E00C05FCD /* StreamingExample */,
+			);
+			name = "screen-streaming";
+			packageProductDependencies = (
+			);
+			productName = StreamingExample;
+			productReference = B90085642D8F7A6E00C05FCD /* screen-streaming.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B90085732D8F7A7000C05FCD /* screen-streamingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B900858B2D8F7A7000C05FCD /* Build configuration list for PBXNativeTarget "screen-streamingTests" */;
+			buildPhases = (
+				B90085702D8F7A7000C05FCD /* Sources */,
+				B90085712D8F7A7000C05FCD /* Frameworks */,
+				B90085722D8F7A7000C05FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B90085762D8F7A7000C05FCD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B90085772D8F7A7000C05FCD /* StreamingExampleTests */,
+			);
+			name = "screen-streamingTests";
+			packageProductDependencies = (
+			);
+			productName = StreamingExampleTests;
+			productReference = B90085742D8F7A7000C05FCD /* screen-streamingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B900857D2D8F7A7000C05FCD /* screen-streamingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B900858E2D8F7A7000C05FCD /* Build configuration list for PBXNativeTarget "screen-streamingUITests" */;
+			buildPhases = (
+				B900857A2D8F7A7000C05FCD /* Sources */,
+				B900857B2D8F7A7000C05FCD /* Frameworks */,
+				B900857C2D8F7A7000C05FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B90085802D8F7A7000C05FCD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B90085812D8F7A7000C05FCD /* StreamingExampleUITests */,
+			);
+			name = "screen-streamingUITests";
+			packageProductDependencies = (
+			);
+			productName = StreamingExampleUITests;
+			productReference = B900857E2D8F7A7000C05FCD /* screen-streamingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B90086352D8FE80100C05FCD /* Broadcast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B90086402D8FE80100C05FCD /* Build configuration list for PBXNativeTarget "Broadcast" */;
+			buildPhases = (
+				B90086322D8FE80100C05FCD /* Sources */,
+				B90086332D8FE80100C05FCD /* Frameworks */,
+				B90086342D8FE80100C05FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B90086382D8FE80100C05FCD /* Broadcast */,
+			);
+			name = Broadcast;
+			packageProductDependencies = (
+			);
+			productName = Broadcast;
+			productReference = B90086362D8FE80100C05FCD /* Broadcast.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B90086472D8FEA2A00C05FCD /* BroadcastUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B90086532D8FEA2A00C05FCD /* Build configuration list for PBXNativeTarget "BroadcastUI" */;
+			buildPhases = (
+				B90086442D8FEA2A00C05FCD /* Sources */,
+				B90086452D8FEA2A00C05FCD /* Frameworks */,
+				B90086462D8FEA2A00C05FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B900864B2D8FEA2A00C05FCD /* BroadcastUI */,
+			);
+			name = BroadcastUI;
+			packageProductDependencies = (
+			);
+			productName = BroadcastUI;
+			productReference = B90086482D8FEA2A00C05FCD /* BroadcastUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B900855C2D8F7A6E00C05FCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					B90085632D8F7A6E00C05FCD = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					B90085732D8F7A7000C05FCD = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = B90085632D8F7A6E00C05FCD;
+					};
+					B900857D2D8F7A7000C05FCD = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = B90085632D8F7A6E00C05FCD;
+					};
+					B90086352D8FE80100C05FCD = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					B90086472D8FEA2A00C05FCD = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = B900855F2D8F7A6E00C05FCD /* Build configuration list for PBXProject "screen-streaming" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B900855B2D8F7A6E00C05FCD;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B90085652D8F7A6E00C05FCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B90085632D8F7A6E00C05FCD /* screen-streaming */,
+				B90085732D8F7A7000C05FCD /* screen-streamingTests */,
+				B900857D2D8F7A7000C05FCD /* screen-streamingUITests */,
+				B90086352D8FE80100C05FCD /* Broadcast */,
+				B90086472D8FEA2A00C05FCD /* BroadcastUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B90085622D8F7A6E00C05FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90085722D8F7A7000C05FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B900857C2D8F7A7000C05FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90086342D8FE80100C05FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90086462D8FEA2A00C05FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B90085602D8F7A6E00C05FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90085702D8F7A7000C05FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B900857A2D8F7A7000C05FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90086322D8FE80100C05FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B90086442D8FEA2A00C05FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B90085762D8F7A7000C05FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B90085632D8F7A6E00C05FCD /* screen-streaming */;
+			targetProxy = B90085752D8F7A7000C05FCD /* PBXContainerItemProxy */;
+		};
+		B90085802D8F7A7000C05FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B90085632D8F7A6E00C05FCD /* screen-streaming */;
+			targetProxy = B900857F2D8F7A7000C05FCD /* PBXContainerItemProxy */;
+		};
+		B900863D2D8FE80100C05FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B90086352D8FE80100C05FCD /* Broadcast */;
+			targetProxy = B900863C2D8FE80100C05FCD /* PBXContainerItemProxy */;
+		};
+		B90086502D8FEA2A00C05FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B90086472D8FEA2A00C05FCD /* BroadcastUI */;
+			targetProxy = B900864F2D8FEA2A00C05FCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B90085862D8F7A7000C05FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B90085872D8F7A7000C05FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B90085892D8F7A7000C05FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StreamingExample/StreamingExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StreamingExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StreamingExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B900858A2D8F7A7000C05FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StreamingExample/StreamingExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StreamingExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StreamingExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B900858C2D8F7A7000C05FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/screen-streaming.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/screen-streaming";
+			};
+			name = Debug;
+		};
+		B900858D2D8F7A7000C05FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/screen-streaming.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/screen-streaming";
+			};
+			name = Release;
+		};
+		B900858F2D8F7A7000C05FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StreamingExample;
+			};
+			name = Debug;
+		};
+		B90085902D8F7A7000C05FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StreamingExample;
+			};
+			name = Release;
+		};
+		B90086412D8FE80100C05FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Broadcast/Broadcast.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Broadcast/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Broadcast;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExample.Broadcast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B90086422D8FE80100C05FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Broadcast/Broadcast.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Broadcast/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Broadcast;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExample.Broadcast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B90086542D8FEA2A00C05FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BroadcastUI/BroadcastUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BroadcastUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BroadcastUI;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExample.BroadcastUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B90086552D8FEA2A00C05FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BroadcastUI/BroadcastUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3964G4G88G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BroadcastUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BroadcastUI;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freddie.StreamingExample.BroadcastUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B900855F2D8F7A6E00C05FCD /* Build configuration list for PBXProject "screen-streaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B90085862D8F7A7000C05FCD /* Debug */,
+				B90085872D8F7A7000C05FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B90085882D8F7A7000C05FCD /* Build configuration list for PBXNativeTarget "screen-streaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B90085892D8F7A7000C05FCD /* Debug */,
+				B900858A2D8F7A7000C05FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B900858B2D8F7A7000C05FCD /* Build configuration list for PBXNativeTarget "screen-streamingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B900858C2D8F7A7000C05FCD /* Debug */,
+				B900858D2D8F7A7000C05FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B900858E2D8F7A7000C05FCD /* Build configuration list for PBXNativeTarget "screen-streamingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B900858F2D8F7A7000C05FCD /* Debug */,
+				B90085902D8F7A7000C05FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B90086402D8FE80100C05FCD /* Build configuration list for PBXNativeTarget "Broadcast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B90086412D8FE80100C05FCD /* Debug */,
+				B90086422D8FE80100C05FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B90086532D8FEA2A00C05FCD /* Build configuration list for PBXNativeTarget "BroadcastUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B90086542D8FEA2A00C05FCD /* Debug */,
+				B90086552D8FEA2A00C05FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B900855C2D8F7A6E00C05FCD /* Project object */;
+}
