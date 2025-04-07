@@ -6,11 +6,11 @@
 //
 
 protocol ControlRepository {
-    func startStreamReceiver(with host: String)
-    
-    func stopReceiving()
-    
-    func establishServer()
+    func establishServer() async
     
     func stopServer()
+    
+    func connectToServer(with host: String)
+    
+    func stopConnect()
 }

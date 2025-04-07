@@ -63,14 +63,7 @@ struct HomeScreen: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     
-                    NavigationLink("Open Stream view", destination: WatchStreamView())
-                    Button("Echo test") {
-                        viewModel.echo()
-                    }
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                    NavigationLink("Open Stream view", destination: WatchStreamViewV2())
                 }
                 
                 Spacer()

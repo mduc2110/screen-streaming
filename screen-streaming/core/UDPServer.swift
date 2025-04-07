@@ -16,20 +16,15 @@ public final class UDPServer {
     
     private let MAX_PACKET_SIZE = 1400
     
-    private init(
-        ipAddress: String = INetSupporter.getWiFiIPAddress()
-    ) {
-        setupListener(ipAddress)
-    }
+    private init() {}
     
-    private func setupListener(_ ipAddress: String) {
+    func startHostingConnection(completionHandler: @escaping (Data) -> Void) async {
         do {
             // Create a UDP listener on port 5555
             let parameters = NWParameters.udp
             parameters.allowLocalEndpointReuse = true
             listener = try NWListener(using: .udp, on: NWEndpoint.Port(5555))
             
-            // Set up state update handler
             listener?.stateUpdateHandler = { state in
                 switch state {
                 case .ready:
@@ -43,7 +38,8 @@ public final class UDPServer {
                 }
             }
             
-            // Set up new connection handler
+            listener?.start(queue: .global())
+            
             listener?.newConnectionHandler = { [weak self] connection in
                 switch connection.endpoint {
                 case .hostPort(let host, _):
@@ -52,11 +48,74 @@ public final class UDPServer {
                 }
                 
                 DLog("New connection received from \(connection.endpoint)")
-                self?.handleConnection(connection)
+                
+                connection.stateUpdateHandler = { [weak self] state in
+                    switch state {
+                    case .ready:
+                        print("Connection ready")
+                        self?.receiveLoop(on: connection, completionHandler: completionHandler)
+                    case .failed(let error):
+                        print("Connection failed with error: \(error)")
+                        self?.removeConnection(connection)
+                    case .cancelled:
+                        print("Connection cancelled")
+                        self?.removeConnection(connection)
+                    default:
+                        break
+                    }
+                }
+                
+                connection.start(queue: .global())
+                
             }
-            
         } catch {
             DLog("Failed to create UDP server: \(error)")
+        }
+    }
+    
+    private func receiveData(with connection: NWConnection) -> AsyncStream<Data> {
+        return AsyncStream { continuation in
+            Task {
+                await receiveLoop(connection, continuation)
+            }
+        }
+    }
+    
+    func receiveData() -> AsyncStream<Data> {
+        return AsyncStream { [weak self] continuation in
+            guard let self else { return }
+            
+            listener?.newConnectionHandler = { [weak self] connection in
+                connection.start(queue: .global())
+                
+                Task {
+                    await self?.receiveLoop(connection, continuation)
+                }
+            }
+        }
+    }
+    
+    private func receiveLoop(_ connection: NWConnection, _ continuation: AsyncStream<Data>.Continuation) async {
+        while true {
+            let data = await receiveData(on: connection)
+            if let data = data {
+                continuation.yield(data)
+            } else {
+                continuation.finish()
+                break
+            }
+        }
+    }
+    
+    private func receiveData(on connection: NWConnection) async -> Data? {
+        await withCheckedContinuation { continuation in
+            connection.receive(minimumIncompleteLength: 1, maximumLength: 65535) { data, _, _, error in
+                if let data = data, !data.isEmpty {
+                    continuation.resume(returning: data)
+                } else {
+                    continuation.resume(returning: nil)
+                }
+            }
         }
     }
     
@@ -73,42 +132,16 @@ public final class UDPServer {
         connections.removeAll()
     }
     
-    private func handleConnection(_ connection: NWConnection) {
-        connections.append(connection)
-        
-        connection.stateUpdateHandler = { [weak self] state in
-            switch state {
-            case .ready:
-                print("Connection ready")
-                self?.receiveMessage(on: connection)
-            case .failed(let error):
-                print("Connection failed with error: \(error)")
-                self?.removeConnection(connection)
-            case .cancelled:
-                print("Connection cancelled")
-                self?.removeConnection(connection)
-            default:
-                break
-            }
-        }
-        
-        connection.start(queue: .global())
-    }
-    
     private func removeConnection(_ connection: NWConnection) {
         if let index = connections.firstIndex(where: { $0 === connection }) {
             connections.remove(at: index)
         }
     }
     
-    private func receiveMessage(on connection: NWConnection) {
-        connection.receive(minimumIncompleteLength: 1, maximumLength: 65535) { [weak self] data, _, isComplete, error in
+    private func receiveLoop(on conn: NWConnection, completionHandler: @escaping (Data) -> Void) {
+        conn.receive(minimumIncompleteLength: 1, maximumLength: 65535) { [weak self] data, _, isComplete, error in
             if let data = data, !data.isEmpty {
-                // Process received data
-                print("Received data: \(data.count) bytes")
-                
-//                // Echo the data back to the client
-//                self?.send(data: data, on: connection)
+                completionHandler(data)
             }
             
             if let error = error {
@@ -116,7 +149,7 @@ public final class UDPServer {
                 DLog("Receive error: \(error)")
             } else {
                 // Continue receiving messages
-                self?.receiveMessage(on: connection)
+                self?.receiveLoop(on: conn, completionHandler: completionHandler)
             }
         }
     }

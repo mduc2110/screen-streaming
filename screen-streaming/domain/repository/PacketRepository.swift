@@ -10,7 +10,4 @@ import Foundation
 protocol PacketRepository {
     func subscribe(completionHandler: @escaping (Data) -> Void)
     func unsubscribe()
-    func sendData(data: Data)
-    
-    func sendMessage(msg: String)//
 }

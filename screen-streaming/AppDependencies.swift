@@ -11,11 +11,11 @@ public func createCoreComponents() {
         
         $0.single(UDPServer.self) { UDPServer.shared }
         
-        $0.single(StreamService.self) { StreamServiceReal(udpClient: get()) }
+        $0.single(HostService.self) { HostServiceReal(get()) }
         
-        $0.single(DatagramSenderService.self) { DatagramSenderServiceReal(udpServer: get()) }
+        $0.single(SenderService.self) { SenderServiceReal() }
         
-        $0.factory(PacketRepository.self) { PacketReceiverRepository(streamService: get()) }
+        $0.factory(PacketRepository.self) { PacketReceiverRepository(hostService: get()) }
         
         $0.factory(DatagramSenderRepository.self) { DatagramSenderRepositoryReal(get()) }
         
@@ -25,7 +25,7 @@ public func createCoreComponents() {
 
 public func createDomainComponents() {
     Injector.shared.createModule {
-        $0.factory(PacketRepository.self) { PacketReceiverRepository(streamService: get()) }
+        $0.factory(PacketRepository.self) { PacketReceiverRepository(hostService: get()) }
         
         $0.factory(DatagramSenderRepository.self) { DatagramSenderRepositoryReal(get()) }
         

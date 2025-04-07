@@ -7,23 +7,24 @@
 
 import Foundation
 
-protocol DatagramSenderService {
-    func startHosting()
-    func send(data: Data)
+protocol SenderService {
+    func connectToHost(host: String)
+    func stopConnect()
+    func sendToServer(data: Data)
 }
 
-public final class DatagramSenderServiceReal: DatagramSenderService {
-    private let udpServer: UDPServer
+class SenderServiceReal: SenderService {
+    private let udpClient: UDPClient = UDPClient.shared
     
-    public init(udpServer: UDPServer) {
-        self.udpServer = udpServer
+    func connectToHost(host: String) {
+        udpClient.establishConnection(with: host)
     }
     
-    public func startHosting() {
-        udpServer.start()
+    func stopConnect() {
+        udpClient.stop()
     }
     
-    public func send(data: Data) {
-        udpServer.broadcast(data: data)
+    func sendToServer(data: Data) {
+        udpClient.send(data: data)
     }
 }

@@ -7,23 +7,33 @@
 
 import Foundation
 
-protocol StreamService {
-    func startReceive(with host: String)
-    func stopReceiving()
-    func sendMessage(msg: String)
-    func sendData(data: Data)
+protocol HostService {
+    func startHostingConnection() async
+    func stopHostingConnection()
     
     func subscribe(_ receiver: StreamServiceReceiver)
     func unsubscribe(_ receiver: StreamServiceReceiver)
 }
 
-final class StreamServiceReal: StreamService {
-    private let udpClient: UDPClient
+class HostServiceReal: HostService {
+    private let udpServer: UDPServer
     
     private var receivers: [StreamServiceReceiver] = []
     
-    init(udpClient: UDPClient) {
-        self.udpClient = udpClient
+    init(
+        _ udpServer: UDPServer
+    ) {
+        self.udpServer = udpServer
+    }
+    
+    func startHostingConnection() async {
+        await udpServer.startHostingConnection { [weak self] data in
+            self?.receivers.forEach { $0.onReceive(data: data) }
+        }
+    }
+    
+    func stopHostingConnection() {
+        
     }
     
     func subscribe(_ receiver: StreamServiceReceiver) {
@@ -35,22 +45,22 @@ final class StreamServiceReal: StreamService {
         receivers.removeAll { $0 === receiver }
     }
     
-    func startReceive(with host: String) {
-        udpClient.establishConnection(with: host)
-        udpClient.receive { [weak self] data in
-            self?.receivers.forEach { $0.onReceive(data: data) }
-        }
-    }
-    
-    func stopReceiving() {
-        udpClient.stop()
-    }
-    
-    func sendMessage(msg: String) {
-        udpClient.sendMessage(msg: msg)
-    }
-    
-    func sendData(data: Data) {
-        udpClient.send(data: data)
-    }
+//    func startReceive(with host: String) {
+//        udpClient.establishConnection(with: host)
+//        udpClient.receive { [weak self] data in
+//            self?.receivers.forEach { $0.onReceive(data: data) }
+//        }
+//    }
+//
+//    func stopReceiving() {
+//        udpClient.stop()
+//    }
+//
+//    func sendMessage(msg: String) {
+//        udpClient.sendMessage(msg: msg)
+//    }
+//
+//    func sendData(data: Data) {
+//        udpClient.send(data: data)
+//    }
 }

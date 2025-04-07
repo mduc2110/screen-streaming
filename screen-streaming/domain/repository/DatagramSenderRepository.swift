@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DatagramSenderRepository {
-    func startBroadcasting(data: Data)
+    func sendToServer(data: Data)
 }

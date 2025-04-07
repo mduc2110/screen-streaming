@@ -31,37 +31,23 @@ class HomeViewModel: ObservableObject {
     
     func connectToServer() {
         guard !serverAddress.isEmpty else { return }
-        streamControlRepository.startStreamReceiver(with: serverAddress)
-//        streamReceiverRepository.subscribe { data in
-//            DLog("🥲 \(data)")
-//        }
+        streamControlRepository.connectToServer(with: serverAddress)
     }
     
     func startStreaming() {
-        streamControlRepository.establishServer()
+        Task {
+            await streamControlRepository.establishServer()
+        }
+        
     }
     
     func stopStreaming() {
         streamControlRepository.stopServer()
     }
     
-    func broadcastData(data: Data) {
-        senderRepository.startBroadcasting(data: data)
-    }
-    
-    func echo() {
-        guard !serverAddress.isEmpty else { return }
-        streamControlRepository.startStreamReceiver(with: serverAddress)
-        streamReceiverRepository.sendMessage(msg: "Oh hellll noooo")
-//        streamReceiverRepository.subscribe { data in
-//            DLog("🥲 \(data)")
-//        }
-    }
-    
     func sendToServer(data: Data) {
-        streamReceiverRepository.sendData(data: data)
+        senderRepository.sendToServer(data: data)
     }
-    
     
     private func getIPAddress() -> String? {
         return INetSupporter.getWiFiIPAddress()

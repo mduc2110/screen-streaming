@@ -226,92 +226,6 @@
             endingLineNumber = "49"
             landmarkName = "VideoPlayerView"
             landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "52B9BBA2-488B-45A0-9927-AFE8522CCA0A - fa6cf0426d17cb9f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of StreamingExample.VideoPlayerView.viewModel : StreamingExample.VideoStreamViewModel"
-                  moduleName = "StreamingExample.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duc.vu1/Feddie/ios/StreamingExample/StreamingExample/presentation/watch/VideoStreamViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "52B9BBA2-488B-45A0-9927-AFE8522CCA0A - 16b4f51ef07da739"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StreamingExample.VideoPlayerView.viewModel.getter : StreamingExample.VideoStreamViewModel"
-                  moduleName = "StreamingExample.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duc.vu1/Feddie/ios/StreamingExample/StreamingExample/presentation/watch/VideoStreamViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "52B9BBA2-488B-45A0-9927-AFE8522CCA0A - d9efeaec62d7855c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StreamingExample.VideoPlayerView.viewModel.setter : StreamingExample.VideoStreamViewModel"
-                  moduleName = "StreamingExample.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duc.vu1/Feddie/ios/StreamingExample/StreamingExample/presentation/watch/VideoStreamViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49">
-               </Location>
-               <Location
-                  uuid = "52B9BBA2-488B-45A0-9927-AFE8522CCA0A - 22f0dd911fbe186d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StreamingExample.VideoPlayerView.viewModel.modify : StreamingExample.VideoStreamViewModel"
-                  moduleName = "StreamingExample.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duc.vu1/Feddie/ios/StreamingExample/StreamingExample/presentation/watch/VideoStreamViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49">
-               </Location>
-               <Location
-                  uuid = "52B9BBA2-488B-45A0-9927-AFE8522CCA0A - 1a7cf293129828b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StreamingExample.VideoPlayerView.viewModel.modify : StreamingExample.VideoStreamViewModel with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "StreamingExample.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "52B9BBA2-488B-45A0-9927-AFE8522CCA0A - 73a9a4c01ecb0f1b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StreamingExample.VideoPlayerView.$viewModel.getter : SwiftUI.ObservedObject&lt;StreamingExample.VideoStreamViewModel&gt;.Wrapper"
-                  moduleName = "StreamingExample.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duc.vu1/Feddie/ios/StreamingExample/StreamingExample/presentation/watch/VideoStreamViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -328,6 +242,22 @@
             endingLineNumber = "57"
             landmarkName = "updateUIView(_:context:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9600D156-CC20-4FDF-BF22-41E4E77FE5F8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "screen-streaming/presentation/watch/VideoStreamViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

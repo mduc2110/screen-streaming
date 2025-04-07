@@ -8,13 +8,13 @@
 import Foundation
 
 final class DatagramSenderRepositoryReal: DatagramSenderRepository {
-    private let senderService: DatagramSenderService
+    private let senderService: SenderService
     
-    init(_ senderService: DatagramSenderService) {
+    init(_ senderService: SenderService) {
         self.senderService = senderService
     }
     
-    func startBroadcasting(data: Data) {
-        senderService.send(data: data)
+    func sendToServer(data: Data) {
+        senderService.sendToServer(data: data)
     }
 }

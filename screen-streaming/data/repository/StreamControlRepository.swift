@@ -6,30 +6,32 @@
 //
 
 final class StreamControlRepository: ControlRepository {
-    private let streamService: StreamService
-    private let senderService: DatagramSenderService
+    private let hostService: HostService
+    private let senderService: SenderService
     
     init (
-        _ streamService: StreamService,
-        _ senderService: DatagramSenderService
+        _ hostService: HostService,
+        _ senderService: SenderService
     ) {
-        self.streamService = streamService
+        self.hostService = hostService
         self.senderService = senderService
     }
     
-    func startStreamReceiver(with host: String) {
-        streamService.startReceive(with: host)
-    }
-    
-    func stopReceiving() {
-        streamService.stopReceiving()
-    }
-    
-    func establishServer() {
-        senderService.startHosting()
+    func establishServer() async {
+        await hostService.startHostingConnection()
+//        senderService.startHosting()
     }
     
     func stopServer() {
+        hostService.stopHostingConnection()
         //TODO: Implement
+    }
+    
+    func connectToServer(with host: String) {
+        senderService.connectToHost(host: host)
+    }
+    
+    func stopConnect() {
+        senderService.stopConnect()
     }
 }
