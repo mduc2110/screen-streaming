@@ -15,67 +15,12 @@ func DLog(_ message: String, _ file: String = #file, _ line: Int = #line) {
 }
 
 struct ContentView: View {
-    @StateObject private var viewModel = VideoStreamViewModel()
     private let clientSocket = UDPClient.shared
     
     private let recorder = StreamRecoder.shared
     
     var body: some View {
         HomeScreen()
-//        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundStyle(.tint)
-//            Text("Hello, world!")
-//            HStack {
-//                Button("Ping connection", action: {
-//                    clientSocket.ping()
-//                    clientSocket.receive { data in
-//                        viewModel.updateBytes(data)
-//                    }
-//                })
-//                Button("Tab to record", action: {
-//    //                startBroadcast()
-//                    recorder.startRecording { bytes in
-//                        clientSocket.send(data: bytes)
-//    //                    viewModel.updateBytes(bytes)
-//                    }
-//                    
-//                    clientSocket.receive { data in
-//                        viewModel.updateBytes(data)
-//                    }
-//                })
-//                Button("Tab to stop", action: {
-//                    recorder.stopRecording { vc in
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                            UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true)
-//                        }
-//                    }
-//                })
-//            }
-//            
-//            List {
-//                Text("Sample item 1")
-//                Text("Sample item 2")
-//                Text("Sample item 3")
-//                Text("Sample item 4")
-//                Text("Sample item 5")
-//            }
-//            viewModel.videoPlayerView
-//                .frame(width: 300, height: 500)
-//                .background(Color.gray)
-//            
-//            Button("Simulate Video Frame") {
-//                let fakeVideoData = Data([0x00, 0x00, 0x00, 0x01]) // Replace with actual video bytes
-////                                viewModel.updateBytes(fakeVideoData)
-//                                viewModel.decodeAndDisplay()
-////                let fakeVideoData = Data([0x00, 0x00, 0x00, 0x01]) // Replace with actual byte data
-////                viewModel.decodeAndDisplay()
-//            }
-//        }
-//        .padding()
-//        .onAppear {
-//        }
     }
     
     func startBroadcast() {

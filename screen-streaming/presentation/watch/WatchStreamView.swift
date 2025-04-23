@@ -1,22 +1,27 @@
 //
 //  WatchStreamView.swift
-//  StreamingExample
+//  screen-streaming
 //
-//  Created by duc.vu1 on 24/3/25.
+//  Created by duc.vu1 on 6/4/25.
 //
 
 import SwiftUI
 
 struct WatchStreamView: View {
-    @StateObject private var viewModel = VideoStreamViewModel()
+    @StateObject private var viewModel = WatchStreamViewModel()
     
     var body: some View {
-        Text("WatchStreamView")
-        VideoPlayerView(viewModel: viewModel)
-            .frame(width: 300, height: 500)
-            .background(Color.gray)
-            .onAppear {
-                viewModel.startReceiveData()
-            }
+        ZStack {
+            Color.gray // Background
+                .edgesIgnoringSafeArea(.all)
+            
+            VideoDisplayRepresentable(viewModel: viewModel)
+            .ignoresSafeArea()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .edgesIgnoringSafeArea(.all)
+        }
+        .onAppear {
+            viewModel.startReceiveData()
+        }
     }
 }

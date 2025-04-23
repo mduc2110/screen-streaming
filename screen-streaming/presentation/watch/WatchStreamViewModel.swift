@@ -1,5 +1,5 @@
 //
-//  WatchStreamViewModelV2.swift
+//  WatchStreamViewModel.swift
 //  screen-streaming
 //
 //  Created by duc.vu1 on 6/4/25.
@@ -10,7 +10,7 @@ import SwiftUI
 import AVFoundation
 import CoreMedia
 
-class WatchStreamViewModelV2: ObservableObject {
+class WatchStreamViewModel: ObservableObject {
     @Published var videoData: Data? // This will hold the received video bytes
     @Published var sampleBuffer: CMSampleBuffer?
     
@@ -29,7 +29,7 @@ class WatchStreamViewModelV2: ObservableObject {
 
 // SwiftUI wrapper for macOS
 struct VideoDisplayRepresentable: UIViewRepresentable {
-    @ObservedObject var viewModel: WatchStreamViewModelV2
+    @ObservedObject var viewModel: WatchStreamViewModel
     
     func makeUIView(context: Context) -> DisplayView {
         let view = DisplayView()
@@ -56,11 +56,14 @@ class DisplayView: UIView {
     
     init() {
         displayLayer = AVSampleBufferDisplayLayer()
-        displayLayer.videoGravity = .resizeAspectFill
-        displayLayer.backgroundColor = UIColor.black.cgColor
+        displayLayer.videoGravity = .resizeAspect // Changed to resizeAspect to maintain aspect ratio
+//        displayLayer.backgroundColor = UIColor.black.cgColor
         displayLayer.frame = CGRect(x: 0, y: 0, width: 300, height: 500) // Set initial frame
         
         super.init(frame: .zero)
+        // Initialize with screen bounds
+//        let screenBounds = UIScreen.main.bounds
+//        super.init(frame: screenBounds)
         
         // Set up layer-hosting
         layer.addSublayer(displayLayer)
@@ -68,10 +71,6 @@ class DisplayView: UIView {
         
         // Make sure we're on top
         layer.zPosition = 1000
-        
-        // Add debug border
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.red.cgColor
         
         // Force layout
         setNeedsLayout()
@@ -88,7 +87,22 @@ class DisplayView: UIView {
         super.layoutSubviews()
         print("🔄 LayoutSubviews called")
         displayLayer.frame = bounds
-        print("📏 Layer frame updated: \(bounds)")
+        
+        // Center the content within the bounds while maintaining aspect ratio
+//        if let videoSize = displayLayer.videoRect.size, !videoSize.equalTo(.zero) {
+//            let viewSize = bounds.size
+//            let scale = min(viewSize.width / videoSize.width, viewSize.height / videoSize.height)
+//            let scaledVideoSize = CGSize(width: videoSize.width * scale, height: videoSize.height * scale)
+//            let centeredRect = CGRect(
+//                x: (viewSize.width - scaledVideoSize.width) / 2,
+//                y: (viewSize.height - scaledVideoSize.height) / 2,
+//                width: scaledVideoSize.width,
+//                height: scaledVideoSize.height
+//            )
+//            displayLayer.frame = centeredRect
+//        }
+        
+        print("📏 Layer frame updated: \(displayLayer.frame)")
         print("🎯 Layer is ready: \(displayLayer.isReadyForMoreMediaData)")
         print("🔍 Layer error: \(String(describing: displayLayer.error))")
         print("👁️ Layer is visible: \(!isHidden)")

@@ -63,7 +63,7 @@ struct HomeScreen: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     
-                    NavigationLink("Open Stream view", destination: WatchStreamViewV2())
+                    NavigationLink("Open Stream view", destination: WatchStreamView())
                 }
                 
                 Spacer()

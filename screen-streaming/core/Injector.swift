@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public final class Injector: @unchecked Sendable {
     
@@ -59,4 +60,23 @@ public struct ByInject<T> {
 
 public func get<T>() -> T {
     Injector.shared.resolve()
+}
+
+@propertyWrapper
+public struct ByInjectObservable<T: ObservableObject> {
+    private var _object: T
+    
+    public init() {
+        self._object = Injector.shared.resolve()
+    }
+    
+    @MainActor
+    public var wrappedValue: T {
+        _object
+    }
+    
+    @MainActor
+    public var projectedValue: ObservedObject<T>.Wrapper {
+        ObservedObject(wrappedValue: _object).projectedValue
+    }
 }
